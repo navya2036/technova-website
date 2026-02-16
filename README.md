@@ -55,7 +55,7 @@ Welcome to the official website for **TechNova 2026**, the annual technical fest
 
 ## 🚀 Live Website
 
-Visit the website: [TechNova 2026](https://navya2036.github.io/technova-website)
+Visit the website: [TechNova 2026]([https://navya2036.github.io/technova-website](https://endearing-bubblegum-f9fca3.netlify.app/))
 
 ## 📞 Contact Information
 
