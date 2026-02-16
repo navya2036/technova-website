@@ -14,7 +14,7 @@ Welcome to the official website for **TechNova 2026**, the annual technical fest
 ## 🏛️ Departments Covered
 
 - 🤖 **Artificial Intelligence**
-- 🧪 **Basic Science** 
+- 🧪 **Basic Science**
 - 🏗️ **Civil Engineering**
 - 💻 **Computer Science & Engineering**
 - 📡 **Electronics & Communication Engineering**
