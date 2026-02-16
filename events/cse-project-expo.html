@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSE Project Expo - TechNova 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .shimmer-text {
+            background: linear-gradient(90deg, #a855f7, #c084fc, #a855f7);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% center;
+            }
+
+            100% {
+                background-position: 200% center;
+            }
+        }
+
+        .back-button {
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            transform: translateX(-5px);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-gray-100">
+
+    <!-- Navigation -->
+    <nav class="bg-slate-900 border-b border-purple-500 py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <a href="../software-events.html"
+                class="back-button inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition text-lg font-semibold">
+                <i class="fas fa-arrow-left"></i>
+                Back to Software Events
+            </a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="container mx-auto px-4 py-12">
+        <div class="text-center">
+            <h1 class="text-4xl md:text-5xl font-bold shimmer-text mb-4">CSE Project Expo</h1>
+            <p class="text-xl text-purple-300">Computer Science Engineering</p>
+            <div class="mt-6 inline-flex items-center gap-4 bg-slate-800 rounded-lg px-6 py-3">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-users text-purple-400"></i>
+                    <span class="font-semibold">Team Size: 3</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-clock text-purple-400"></i>
+                    <span class="font-semibold">10 min Presentation</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Event Description -->
+    <section class="container mx-auto px-4 py-12">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-slate-900 rounded-xl p-8 border-2 border-purple-500 mb-8">
+                <h2 class="text-3xl font-bold text-purple-400 mb-6">Event Description</h2>
+                <div class="space-y-4 text-gray-300">
+                    <p>
+                        Project Expo – TechNova 2026 showcases the innovation and technical skills of students from CSE
+                        and allied branches such as AI, DS, IT, and Cyber Security. Participants present working models,
+                        applications, and research prototypes that solve real-world problems using emerging
+                        technologies.
+                    </p>
+                    <p>
+                        The event provides a professional platform to interact with faculty, peers, and industry experts
+                        while encouraging experiential learning, collaboration, and creativity. Outstanding projects are
+                        recognized with awards, inspiring students to build impactful technology-driven solutions.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Technology Areas -->
+            <div class="bg-slate-900 rounded-xl p-8 border-2 border-purple-500 mb-8">
+                <h2 class="text-3xl font-bold text-purple-400 mb-6">Technology Areas</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <div class="bg-slate-800 rounded-lg p-4 text-center border border-purple-400">
+                        <h3 class="font-bold text-purple-300">AI/ML</h3>
+                    </div>
+                    <div class="bg-slate-800 rounded-lg p-4 text-center border border-cyan-400">
+                        <h3 class="font-bold text-cyan-300">IoT</h3>
+                    </div>
+                    <div class="bg-slate-800 rounded-lg p-4 text-center border border-purple-400">
+                        <h3 class="font-bold text-purple-300">Data Analytics</h3>
+                    </div>
+                    <div class="bg-slate-800 rounded-lg p-4 text-center border border-cyan-400">
+                        <h3 class="font-bold text-cyan-300">Cyber Security</h3>
+                    </div>
+                    <div class="bg-slate-800 rounded-lg p-4 text-center border border-purple-400">
+                        <h3 class="font-bold text-purple-300">Cloud Computing</h3>
+                    </div>
+                    <div class="bg-slate-800 rounded-lg p-4 text-center border border-cyan-400">
+                        <h3 class="font-bold text-cyan-300">Web/Mobile Apps</h3>
+                    </div>
+                    <div class="bg-slate-800 rounded-lg p-4 text-center border border-purple-400">
+                        <h3 class="font-bold text-purple-300">Blockchain</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rules Section -->
+            <div class="bg-slate-900 rounded-xl p-8 border-2 border-purple-600">
+                <h2 class="text-3xl font-bold text-purple-500 mb-6">Rules & Guidelines</h2>
+                <div class="space-y-6 text-gray-300">
+                    <div class="bg-slate-800 rounded-lg p-6">
+                        <h3 class="text-xl font-bold text-purple-400 mb-4">Participation Rules</h3>
+                        <ul class="space-y-2 list-disc list-inside">
+                            <li>Participation can be individual or in teams (maximum 3 members per team)</li>
+                            <li>Projects must be related to emerging technologies listed above</li>
+                            <li>All submissions must be original work of the participants</li>
+                            <li>Participants must present a working model, prototype, or PPT</li>
+                            <li>Teams must bring their own laptops, hardware components, and extension boards</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-800 rounded-lg p-6">
+                        <h3 class="text-xl font-bold text-purple-400 mb-4">Presentation Guidelines</h3>
+                        <p class="text-gray-300 mb-4">Each team will be given 10 minutes for demonstration and
+                            explanation, followed by Q&A by judges.</p>
+                        <p class="text-cyan-300 font-semibold mb-2">Participants must clearly explain:</p>
+                        <ul class="space-y-2 list-disc list-inside ml-4">
+                            <li>Problem Statement</li>
+                            <li>Technology Used</li>
+                            <li>Implementation</li>
+                            <li>Innovation & Impact</li>
+                            <li>Future Scope</li>
+                        </ul>
+                        <p class="text-gray-300 mt-4">Participants must report at the venue 30 minutes prior to the
+                            start time for setup.</p>
+                    </div>
+
+                    <div class="bg-slate-800 rounded-lg p-6">
+                        <h3 class="text-xl font-bold text-purple-400 mb-4">Evaluation Criteria</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <div class="bg-purple-900/20 border border-purple-400 rounded-lg p-4 text-center">
+                                <h4 class="font-bold text-purple-300">Innovation & Creativity</h4>
+                                <p class="text-sm text-gray-400">Novelty of approach</p>
+                            </div>
+                            <div class="bg-purple-900/20 border border-purple-400 rounded-lg p-4 text-center">
+                                <h4 class="font-bold text-purple-300">Technical Implementation</h4>
+                                <p class="text-sm text-gray-400">Code quality & architecture</p>
+                            </div>
+                            <div class="bg-purple-900/20 border border-purple-400 rounded-lg p-4 text-center">
+                                <h4 class="font-bold text-purple-300">Practical Relevance</h4>
+                                <p class="text-sm text-gray-400">Real-world applicability</p>
+                            </div>
+                            <div class="bg-purple-900/20 border border-purple-400 rounded-lg p-4 text-center">
+                                <h4 class="font-bold text-purple-300">Problem-Solving</h4>
+                                <p class="text-sm text-gray-400">Effectiveness of solution</p>
+                            </div>
+                            <div class="bg-purple-900/20 border border-purple-400 rounded-lg p-4 text-center">
+                                <h4 class="font-bold text-purple-300">Presentation</h4>
+                                <p class="text-sm text-gray-400">Communication skills</p>
+                            </div>
+                            <div class="bg-purple-900/20 border border-purple-400 rounded-lg p-4 text-center">
+                                <h4 class="font-bold text-purple-300">Working Demo</h4>
+                                <p class="text-sm text-gray-400">Functional prototype</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="container mx-auto px-4 py-16">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-purple-400 mb-6">Event Coordinators</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-slate-900 rounded-xl p-6 border-2 border-purple-500">
+                    <h3 class="text-xl font-bold text-purple-400 mb-4">Faculty Coordinator</h3>
+                    <p class="text-lg font-semibold text-gray-200">Mr. A. Nageswara Rao</p>
+                    <p class="text-gray-400">📞 +91 94916 95993</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl p-6 border-2 border-purple-600">
+                    <h3 class="text-xl font-bold text-purple-500 mb-4">Student Coordinators</h3>
+                    <div class="space-y-2">
+                        <p class="text-lg font-semibold text-gray-200">Sathi Krishna Hasini Varadapureddy</p>
+                        <p class="text-gray-400">📞 +91 91007 85230</p>
+                        <p class="text-lg font-semibold text-gray-200">Vedha Harshitha</p>
+                        <p class="text-gray-400">📞 +91 80199 10118</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-purple-500 py-8 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400">© 2026 TechNova. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

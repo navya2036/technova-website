@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware Debugging - TechNova 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html { scroll-behavior: smooth; }
+        .shimmer-text { 
+            background: linear-gradient(90deg, #f59e0b, #eab308, #f59e0b); 
+            background-size: 200% auto; 
+            -webkit-background-clip: text; 
+            background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            animation: shimmer 3s linear infinite; 
+        }
+        @keyframes shimmer { 
+            0% { background-position: -200% center; } 
+            100% { background-position: 200% center; } 
+        }
+        .back-button { transition: all 0.3s ease; }
+        .back-button:hover { transform: translateX(-5px); }
+    </style>
+</head>
+<body class="bg-slate-950 text-gray-100">
+
+    <!-- Navigation -->
+    <nav class="bg-slate-900 border-b border-amber-500 py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <a href="../ece.html" class="back-button inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 transition text-lg font-semibold">
+                <i class="fas fa-arrow-left"></i>
+                Back to ECE Department
+            </a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="container mx-auto px-4 py-12">
+        <div class="text-center">
+            <div class="text-6xl mb-4">🔧</div>
+            <h1 class="text-4xl md:text-5xl font-bold shimmer-text mb-4">Hardware Debugging Competition</h1>
+            <p class="text-xl text-amber-300">Test Your Circuit Analysis & Troubleshooting Skills</p>
+            <div class="mt-6 inline-flex items-center gap-4 bg-slate-800 rounded-lg px-6 py-3">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-users text-amber-400"></i>
+                    <span class="font-semibold">Individual Event</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-clock text-amber-400"></i>
+                    <span class="font-semibold">2 Hours</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Event Description -->
+    <section class="container mx-auto px-4 py-12">
+        <div class="max-w-5xl mx-auto">
+            <div class="bg-slate-900 rounded-xl p-8 border-2 border-amber-500 mb-8">
+                <h2 class="text-3xl font-bold text-amber-400 mb-6">Event Description</h2>
+                <div class="space-y-4 text-gray-300">
+                    <p>
+                        <strong class="text-amber-300">Hardware Debugging</strong> is the ultimate test for electronics enthusiasts! Participants are presented with faulty electronic circuits and must use their analytical skills and technical knowledge to identify and fix the problems.
+                    </p>
+                    <p>
+                        This competition evaluates your <strong class="text-yellow-300">circuit analysis</strong>, <strong class="text-yellow-300">troubleshooting methodology</strong>, and <strong class="text-yellow-300">hands-on debugging skills</strong>. You'll work with real hardware setups that contain deliberately introduced faults.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Competition Format -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                <!-- Structure -->
+                <div class="bg-slate-900 rounded-xl p-8 border-2 border-yellow-500">
+                    <h2 class="text-2xl font-bold text-yellow-400 mb-6">Competition Structure</h2>
+                    <div class="space-y-4">
+                        <div class="bg-slate-800 rounded-lg p-4">
+                            <h3 class="font-bold text-yellow-300 mb-3">Phase 1: Circuit Analysis</h3>
+                            <ul class="space-y-2 text-gray-300 text-sm">
+                                <li>📋 Written theoretical analysis</li>
+                                <li>🔍 Circuit diagram examination</li>
+                                <li>💭 Problem identification on paper</li>
+                                <li>⏱️ 45 minutes duration</li>
+                            </ul>
+                        </div>
+                        <div class="bg-slate-800 rounded-lg p-4">
+                            <h3 class="font-bold text-yellow-300 mb-3">Phase 2: Hands-On Testing</h3>
+                            <ul class="space-y-2 text-gray-300 text-sm">
+                                <li>🔧 Physical circuit debugging</li>
+                                <li>🧪 Use of test equipment</li>
+                                <li>⚡ Live troubleshooting</li>
+                                <li>⏱️ 75 minutes duration</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills Tested -->
+                <div class="bg-slate-900 rounded-xl p-8 border-2 border-orange-500">
+                    <h2 class="text-2xl font-bold text-orange-400 mb-6">Skills Evaluated</h2>
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="bg-slate-800 rounded-lg p-4 border-l-4 border-orange-400">
+                            <h4 class="font-bold text-orange-300 mb-2">Circuit Analysis</h4>
+                            <p class="text-gray-300 text-sm">Understanding circuit behavior, voltage/current relationships, and component functions</p>
+                        </div>
+                        <div class="bg-slate-800 rounded-lg p-4 border-l-4 border-yellow-400">
+                            <h4 class="font-bold text-yellow-300 mb-2">Diagnostic Methodology</h4>
+                            <p class="text-gray-300 text-sm">Systematic approach to problem identification and fault isolation</p>
+                        </div>
+                        <div class="bg-slate-800 rounded-lg p-4 border-l-4 border-amber-400">
+                            <h4 class="font-bold text-amber-300 mb-2">Tool Proficiency</h4>
+                            <p class="text-gray-300 text-sm">Effective use of multimeters, oscilloscopes, and signal generators</p>
+                        </div>
+                        <div class="bg-slate-800 rounded-lg p-4 border-l-4 border-red-400">
+                            <h4 class="font-bold text-red-300 mb-2">Problem Solving</h4>
+                            <p class="text-gray-300 text-sm">Creative thinking and logical reasoning under time pressure</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Circuit Types -->
+            <div class="bg-slate-900 rounded-xl p-8 border-2 border-blue-500 mb-8">
+                <h2 class="text-3xl font-bold text-blue-400 mb-6">Circuit Categories</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-slate-800 rounded-lg p-6 border border-blue-400">
+                        <div class="text-center">
+                            <i class="fas fa-wave-square text-3xl text-blue-400 mb-3"></i>
+                            <h3 class="font-bold text-blue-300 mb-2">Digital Circuits</h3>
+                            <ul class="text-gray-300 text-sm space-y-1">
+                                <li>Logic Gates</li>
+                                <li>Flip-Flops</li>
+                                <li>Counters</li>
+                                <li>Multiplexers</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-slate-800 rounded-lg p-6 border border-green-400">
+                        <div class="text-center">
+                            <i class="fas fa-chart-line text-3xl text-green-400 mb-3"></i>
+                            <h3 class="font-bold text-green-300 mb-2">Analog Circuits</h3>
+                            <ul class="text-gray-300 text-sm space-y-1">
+                                <li>Op-Amp Circuits</li>
+                                <li>Filters</li>
+                                <li>Oscillators</li>
+                                <li>Amplifiers</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-slate-800 rounded-lg p-6 border border-purple-400">
+                        <div class="text-center">
+                            <i class="fas fa-microchip text-3xl text-purple-400 mb-3"></i>
+                            <h3 class="font-bold text-purple-300 mb-2">Mixed Signal</h3>
+                            <ul class="text-gray-300 text-sm space-y-1">
+                                <li>ADC/DAC</li>
+                                <li>PWM Circuits</li>
+                                <li>Sensor Interfaces</li>
+                                <li>Power Supplies</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Equipment Available -->
+            <div class="bg-slate-900 rounded-xl p-8 border-2 border-green-500 mb-8">
+                <h2 class="text-3xl font-bold text-green-400 mb-6">Test Equipment Provided</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="bg-slate-800 rounded-lg p-4 text-center border border-green-400">
+                        <i class="fas fa-plug text-2xl text-green-400 mb-3"></i>
+                        <h3 class="font-bold text-green-300 text-sm">Digital Multimeter</h3>
+                        <p class="text-gray-400 text-xs mt-1">Voltage, Current, Resistance</p>
+                    </div>
+                    <div class="bg-slate-800 rounded-lg p-4 text-center border border-blue-400">
+                        <i class="fas fa-tv text-2xl text-blue-400 mb-3"></i>
+                        <h3 class="font-bold text-blue-300 text-sm">Oscilloscope</h3>
+                        <p class="text-gray-400 text-xs mt-1">Waveform Analysis</p>
+                    </div>
+                    <div class="bg-slate-800 rounded-lg p-4 text-center border border-purple-400">
+                        <i class="fas fa-broadcast-tower text-2xl text-purple-400 mb-3"></i>
+                        <h3 class="font-bold text-purple-300 text-sm">Function Generator</h3>
+                        <p class="text-gray-400 text-xs mt-1">Signal Source</p>
+                    </div>
+                    <div class="bg-slate-800 rounded-lg p-4 text-center border border-yellow-400">
+                        <i class="fas fa-battery-full text-2xl text-yellow-400 mb-3"></i>
+                        <h3 class="font-bold text-yellow-300 text-sm">Power Supply</h3>
+                        <p class="text-gray-400 text-xs mt-1">Variable DC Source</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Common Fault Types -->
+            <div class="bg-slate-900 rounded-xl p-8 border-2 border-red-500 mb-8">
+                <h2 class="text-3xl font-bold text-red-400 mb-6">Common Fault Categories</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <div class="bg-slate-800 rounded-lg p-4 border-l-4 border-red-400">
+                            <h4 class="font-bold text-red-300 mb-2">Component Failures</h4>
+                            <ul class="text-gray-300 text-sm space-y-1">
+                                <li>• Open/Short circuits</li>
+                                <li>• Faulty ICs</li>
+                                <li>• Damaged passive components</li>
+                                <li>• Broken connections</li>
+                            </ul>
+                        </div>
+                        <div class="bg-slate-800 rounded-lg p-4 border-l-4 border-orange-400">
+                            <h4 class="font-bold text-orange-300 mb-2">Design Issues</h4>
+                            <ul class="text-gray-300 text-sm space-y-1">
+                                <li>• Incorrect component values</li>
+                                <li>• Wrong pin connections</li>
+                                <li>• Power supply problems</li>
+                                <li>• Timing issues</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-slate-800 rounded-lg p-4 border-l-4 border-yellow-400">
+                            <h4 class="font-bold text-yellow-300 mb-2">Signal Integrity</h4>
+                            <ul class="text-gray-300 text-sm space-y-1">
+                                <li>• Noise interference</li>
+                                <li>• Ground loops</li>
+                                <li>• Signal distortion</li>
+                                <li>• Impedance mismatches</li>
+                            </ul>
+                        </div>
+                        <div class="bg-slate-800 rounded-lg p-4 border-l-4 border-green-400">
+                            <h4 class="font-bold text-green-300 mb-2">Environmental</h4>
+                            <ul class="text-gray-300 text-sm space-y-1">
+                                <li>• Temperature effects</li>
+                                <li>• Humidity impact</li>
+                                <li>• Vibration damage</li>
+                                <li>• Aging components</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scoring Criteria -->
+            <div class="bg-slate-900 rounded-xl p-8 border-2 border-indigo-500 mb-8">
+                <h2 class="text-3xl font-bold text-indigo-400 mb-6">Scoring Criteria</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-slate-800 rounded-lg p-6">
+                        <h3 class="font-bold text-indigo-300 mb-4">Phase 1: Theoretical (40%)</h3>
+                        <ul class="space-y-2 text-gray-300">
+                            <li>• Correct problem identification</li>
+                            <li>• Detailed analysis methodology</li>
+                            <li>• Proposed solution approach</li>
+                            <li>• Understanding of circuit operation</li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-800 rounded-lg p-6">
+                        <h3 class="font-bold text-indigo-300 mb-4">Phase 2: Practical (60%)</h3>
+                        <ul class="space-y-2 text-gray-300">
+                            <li>• Successful fault identification</li>
+                            <li>• Correct use of test equipment</li>
+                            <li>• Systematic debugging approach</li>
+                            <li>• Time efficiency</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rules Section -->
+            <div class="bg-slate-900 rounded-xl p-8 border-2 border-purple-500">
+                <h2 class="text-3xl font-bold text-purple-400 mb-6">Competition Rules</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-300">
+                    <div>
+                        <h3 class="font-bold text-purple-300 mb-3">General Rules</h3>
+                        <ul class="space-y-2 list-disc list-inside">
+                            <li>Individual participation only</li>
+                            <li>No external help or collaboration</li>
+                            <li>Use only provided equipment</li>
+                            <li>Document all findings clearly</li>
+                            <li>Submit analysis reports on time</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-purple-300 mb-3">Safety Guidelines</h3>
+                        <ul class="space-y-2 list-disc list-inside">
+                            <li>Follow lab safety protocols</li>
+                            <li>Handle equipment with care</li>
+                            <li>Report any equipment malfunctions</li>
+                            <li>No modifications to test setup</li>
+                            <li>Instructor approval for any changes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="container mx-auto px-4 py-16">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-amber-400 mb-6">Event Coordinators</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-slate-900 rounded-xl p-6 border-2 border-amber-500">
+                    <h3 class="text-xl font-bold text-amber-400 mb-4">Faculty Coordinator</h3>
+                    <p class="text-lg font-semibold text-gray-200">Dr. Y. Rama Krishna</p>
+                    <p class="text-gray-400">📞 +91 94904 95029</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl p-6 border-2 border-yellow-500">
+                    <h3 class="text-xl font-bold text-yellow-400 mb-4">Student Coordinators</h3>
+                    <div class="space-y-2">
+                        <p class="text-lg font-semibold text-gray-200">P. Jaswanth</p>
+                        <p class="text-gray-400">📞 +91 73823 83825</p>
+                        <p class="text-lg font-semibold text-gray-200">Ch. Varsha</p>
+                        <p class="text-gray-400">📞 +91 99635 25565</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-amber-500 py-8 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400">© 2026 TechNova. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

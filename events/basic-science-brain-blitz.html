@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Blitz - TechNova 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html { scroll-behavior: smooth; }
+        .shimmer-text { 
+            background: linear-gradient(90deg, #6366f1, #22d3ee, #6366f1); 
+            background-size: 200% auto; 
+            -webkit-background-clip: text; 
+            background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            animation: shimmer 3s linear infinite; 
+        }
+        @keyframes shimmer { 
+            0% { background-position: -200% center; } 
+            100% { background-position: 200% center; } 
+        }
+        .back-button { transition: all 0.3s ease; }
+        .back-button:hover { transform: translateX(-5px); }
+    </style>
+</head>
+<body class="bg-slate-950 text-gray-100">
+
+    <!-- Navigation -->
+    <nav class="bg-slate-900 border-b border-indigo-500 py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <a href="../basic-science.html" class="back-button inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 transition text-lg font-semibold">
+                <i class="fas fa-arrow-left"></i>
+                Back to Basic Science
+            </a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="container mx-auto px-4 py-12">
+        <div class="text-center">
+            <h1 class="text-4xl md:text-5xl font-bold shimmer-text mb-4">BRAIN BLITZ</h1>
+            <div class="mt-6 inline-flex items-center gap-4 bg-slate-800 rounded-lg px-6 py-3">
+                <span class="font-semibold">Team Size: 1</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Games Section -->
+    <section class="container mx-auto px-4 py-12">
+        <div class="max-w-5xl mx-auto space-y-8">
+            
+            <!-- Number Grid Challenge -->
+            <div class="bg-slate-900 rounded-xl p-8 border-2 border-indigo-500">
+                <h2 class="text-3xl font-bold text-indigo-400 mb-6">Number Grid Challenge</h2>
+                <div class="text-gray-300 leading-relaxed space-y-4">
+                    <p>
+                        Arrange the numbers in ascending order in a 4×4 grid by sliding tiles into two empty slots, using logic and planning.
+                    </p>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold text-cyan-400 mb-3">Rules:</h3>
+                        <ul class="space-y-2 ml-6 list-disc">
+                            <li>4×4 grid with 14 numbered tiles and 2 empty slots.</li>
+                            <li>Arrange numbers 1 to 14 in ascending order, row-wise.</li>
+                            <li>Only adjacent tiles may be moved into empty slots.</li>
+                            <li>No diagonal moves, lifting, or swapping of tiles.</li>
+                            <li>Puzzle cannot be reset once started.</li>
+                            <li>Puzzle is solved only when all numbers are in correct order.</li>
+                            <li>4 minutes per participant</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Number Ladder Game -->
+            <div class="bg-slate-900 rounded-xl p-8 border-2 border-indigo-500">
+                <h2 class="text-3xl font-bold text-indigo-400 mb-6">Number Ladder Game</h2>
+                <div class="text-gray-300 leading-relaxed space-y-4">
+                    <p>
+                        Be the first player to reach exactly 100 by rolling the dice and following the number operations on the board.
+                    </p>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold text-cyan-400 mb-3">Play Rules:</h3>
+                        <ul class="space-y-2 ml-6 list-disc">
+                            <li>After entering the board, roll the dice and move the pawn forward by the number shown.</li>
+                            <li>Rolling a 6 gives an extra turn.</li>
+                            <li>Only one move is allowed per turn.</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold text-cyan-400 mb-3">Special Tiles:</h3>
+                        
+                        <div class="ml-4 space-y-3">
+                            <div>
+                                <p class="font-semibold">"+" or "×" tiles (Ladder tiles)</p>
+                                <ul class="ml-6 list-disc">
+                                    <li>Move forward according to the operation.</li>
+                                    <li>Stay at the new position until the next turn.</li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <p class="font-semibold">"−" or "÷" tiles (Snake tiles)</p>
+                                <ul class="ml-6 list-disc">
+                                    <li>Move backward according to the operation.</li>
+                                    <li>Stay at the new position until the next turn.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="container mx-auto px-4 py-16">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-indigo-400 mb-6">Event Coordinators</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-slate-900 rounded-xl p-6 border-2 border-indigo-500">
+                    <h3 class="text-xl font-bold text-indigo-400 mb-4">Faculty Coordinator</h3>
+                    <p class="text-lg font-semibold text-gray-200">Mr. D.B. N. S. Varma</p>
+                    <p class="text-gray-400">📞 +91 98488 22216</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl p-6 border-2 border-cyan-500">
+                    <h3 class="text-xl font-bold text-cyan-400 mb-4">Student Coordinators</h3>
+                    <div class="space-y-2">
+                        <p class="text-lg font-semibold text-gray-200">Ch. Akhila</p>
+                        <p class="text-gray-400">📞 +91 93908 89646</p>
+                        <p class="text-lg font-semibold text-gray-200 mt-3">G N V S Teertha</p>
+                        <p class="text-gray-400">📞 +91 70325 23466</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-indigo-500 py-8 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400">© 2026 TechNova. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

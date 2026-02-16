@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Hackathon/Vibecoding - TechNova 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .shimmer-text {
+            background: linear-gradient(90deg, #a855f7, #c084fc, #a855f7);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% center;
+            }
+
+            100% {
+                background-position: 200% center;
+            }
+        }
+
+        .back-button {
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            transform: translateX(-5px);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-gray-100">
+
+    <!-- Navigation -->
+    <nav class="bg-slate-900 border-b border-purple-500 py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <a href="../software-events.html"
+                class="back-button inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition text-lg font-semibold">
+                <i class="fas fa-arrow-left"></i>
+                Back to Software Events
+            </a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="container mx-auto px-4 py-12">
+        <div class="text-center">
+            <h1 class="text-4xl md:text-5xl font-bold shimmer-text mb-4">Hackathon/Vibecoding</h1>
+            <p class="text-xl text-purple-300">Information Technology</p>
+            <div class="mt-6 inline-flex items-center gap-4 bg-slate-800 rounded-lg px-6 py-3">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-users text-purple-400"></i>
+                    <span class="font-semibold">Team Size: 4</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-globe text-purple-400"></i>
+                    <span class="font-semibold">National Level</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Event Description -->
+    <section class="container mx-auto px-4 py-12">
+        <div class="max-w-5xl mx-auto">
+            <div class="bg-slate-900 rounded-xl p-8 border-2 border-purple-500 mb-8">
+                <h2 class="text-3xl font-bold text-purple-400 mb-6">Event Description</h2>
+                <div class="space-y-4 text-gray-300">
+                    <p>
+                        Hackathon / Vibecoding is a national-level coding competition for B.Tech students across India,
+                        where teams tackle real-world challenges in a timed format. It emphasizes innovation,
+                        problem-solving, clean code, and collaboration through team-based projects judged on usability,
+                        originality, and presentation.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Competition Focus Areas -->
+            <div class="bg-slate-900 rounded-xl p-8 border-2 border-cyan-500 mb-8">
+                <h2 class="text-3xl font-bold text-cyan-400 mb-6">Evaluation Criteria</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                    <div class="bg-slate-800 rounded-lg p-4 text-center border border-purple-400">
+                        <h3 class="font-bold text-purple-300">Innovation</h3>
+                    </div>
+                    <div class="bg-slate-800 rounded-lg p-4 text-center border border-cyan-400">
+                        <h3 class="font-bold text-cyan-300">Usefulness</h3>
+                    </div>
+                    <div class="bg-slate-800 rounded-lg p-4 text-center border border-green-400">
+                        <h3 class="font-bold text-green-300">Originality</h3>
+                    </div>
+                    <div class="bg-slate-800 rounded-lg p-4 text-center border border-red-400">
+                        <h3 class="font-bold text-red-300">Social Impact</h3>
+                    </div>
+                    <div class="bg-slate-800 rounded-lg p-4 text-center border border-yellow-400">
+                        <h3 class="font-bold text-yellow-300">Presentation</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rules and Guidelines -->
+            <div class="bg-slate-900 rounded-xl p-8 border-2 border-purple-500 mb-8">
+                <h2 class="text-3xl font-bold text-purple-400 mb-6">Rules & Guidelines</h2>
+                <div class="space-y-4 text-gray-300">
+                    <div class="bg-slate-800 rounded-lg p-6">
+                        <ul class="space-y-3 list-disc list-inside">
+                            <li>Team should consist of maximum 4 members.</li>
+                            <li>Arrive 30 minutes before start time; event begins promptly with problem statement
+                                reveal.</li>
+                            <li>Evaluation will be done on innovation, usefulness, originality, social impact, and
+                                presentation.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="container mx-auto px-4 py-16">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-purple-400 mb-6">Event Coordinators</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-slate-900 rounded-xl p-6 border-2 border-purple-500">
+                    <h3 class="text-xl font-bold text-purple-400 mb-4">Faculty Coordinator</h3>
+                    <p class="text-lg font-semibold text-gray-200">Mr. K. Ram Kumar</p>
+                    <p class="text-gray-400">📞 +91 81067 26405</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl p-6 border-2 border-purple-600">
+                    <h3 class="text-xl font-bold text-purple-500 mb-4">Student Coordinator</h3>
+                    <div class="space-y-2">
+                        <p class="text-lg font-semibold text-gray-200">N. Maheswari</p>
+                        <p class="text-gray-400">📞 +91 99661 86199</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-purple-500 py-8 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400">© 2026 TechNova. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

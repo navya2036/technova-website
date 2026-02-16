@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artificial Intelligence - TechNova 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+        }
+        .glow-border:hover {
+            box-shadow: 0 0 20px rgba(34, 211, 238, 0.6);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-gray-100">
+    
+    <!-- Navigation -->
+    <nav class="bg-slate-900 border-b border-indigo-500 py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <a href="index.html" class="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition text-lg font-semibold">
+                <i class="fas fa-arrow-left"></i>
+                Back to Home
+            </a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="container mx-auto px-4 py-12">
+        <div class="text-center">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent mb-4 px-4">
+                Artificial Intelligence
+            </h1>
+            <p class="text-xl text-cyan-300">Intelligence Amplified</p>
+        </div>
+    </header>
+
+    <!-- Event Cards -->
+    <section class="container mx-auto px-4 py-12">
+        <h2 class="text-3xl font-bold text-center mb-10 text-transparent bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text">
+            Department Events
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <!-- Event 1 -->
+            <div class="card-hover glow-border bg-slate-900 rounded-xl p-8 border-2 border-indigo-500">
+                <div class="text-center">
+                    <h3 class="text-2xl font-bold text-indigo-400 mb-3">Coding Contest</h3>
+                    <p class="text-gray-400 mb-4">Solve complex AI and algorithmic challenges in this competitive programming event.</p>
+                    <div class="bg-slate-800 rounded-lg p-3">
+                        <p class="text-sm text-cyan-300">Programming Competition</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coordinators Section -->
+    <section class="container mx-auto px-4 py-16">
+        <h2 class="text-3xl font-bold text-center mb-10 text-transparent bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text">
+            Event Coordinators
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <!-- Faculty Coordinator -->
+            <div class="bg-slate-900 rounded-xl p-8 border-2 border-indigo-500">
+                <h3 class="text-2xl font-bold text-indigo-400 mb-6 text-center">Faculty Coordinator</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-user text-cyan-400 text-xl"></i>
+                        <div>
+                            <p class="text-lg font-semibold text-gray-200">Mr. B. Veerendra</p>
+                            <p class="text-sm text-gray-400">AI Department</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-phone text-cyan-400 text-xl"></i>
+                        <p class="text-gray-300">+91 99596 78878</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Student Coordinators -->
+            <div class="bg-slate-900 rounded-xl p-8 border-2 border-cyan-500">
+                <h3 class="text-2xl font-bold text-cyan-400 mb-6 text-center">Student Coordinators</h3>
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex items-center gap-3 mb-2">
+                            <i class="fas fa-user text-indigo-400 text-xl"></i>
+                            <p class="text-lg font-semibold text-gray-200">D. Navya</p>
+                        </div>
+                        <p class="text-gray-400 ml-9">📞 +91 94404 48707</p>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-3 mb-2">
+                            <i class="fas fa-user text-indigo-400 text-xl"></i>
+                            <p class="text-lg font-semibold text-gray-200">K. Thanusri</p>
+                        </div>
+                        <p class="text-gray-400 ml-9">📞 +91 90142 49288</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-indigo-500 py-8 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400">© 2026 TechNova. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

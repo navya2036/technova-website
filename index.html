@@ -1,0 +1,1792 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNova 2026 - College Tech Festival</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Scrolling text animation */
+        @keyframes scroll {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .scrolling-text {
+            animation: scroll 20s linear infinite;
+        }
+
+        /* Pulse glow animation for scrollbar */
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 10px rgba(34, 211, 238, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 0 20px rgba(34, 211, 238, 0.6), 0 0 30px rgba(99, 102, 241, 0.4);
+            }
+        }
+
+        .sticky {
+            animation: pulseGlow 3s ease-in-out infinite;
+        }
+
+        /* Enhanced card hover with gradient border animation */
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+
+        .card-hover::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 2px;
+            background: linear-gradient(135deg, transparent, rgba(99, 102, 241, 0.3), transparent);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .card-hover:hover::before {
+            opacity: 1;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3), 0 0 30px rgba(34, 211, 238, 0.15);
+        }
+
+        /* Mobile: Disable transform on very small screens to prevent overflow */
+        @media (max-width: 640px) {
+            .card-hover:hover {
+                transform: translateY(-4px);
+            }
+        }
+
+        .card-hover:hover .glow-effect {
+            opacity: 1;
+            transform: scale(1.5);
+        }
+
+        .glow-effect {
+            opacity: 0;
+            transition: all 0.6s ease;
+            transform: scale(1);
+        }
+
+        /* Floating animation for logos */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Pulse animation for badges */
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .pulse-animation {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* Gradient text shimmer */
+        @keyframes shimmer {
+            0% {
+                background-position: -200% center;
+            }
+
+            100% {
+                background-position: 200% center;
+            }
+        }
+
+        .shimmer-text {
+            background: linear-gradient(90deg, #6366f1, #22d3ee, #6366f1);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3s linear infinite;
+        }
+
+        /* Enhanced coordinator card */
+        .coordinator-card {
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .coordinator-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(99, 102, 241, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+
+        .coordinator-card:hover::before {
+            opacity: 1;
+            animation: shine 1.5s ease-in-out;
+        }
+
+        @keyframes shine {
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
+        }
+
+        /* Responsive coordinator card hover */
+        @media (min-width: 768px) {
+            .coordinator-card:hover {
+                transform: translateY(-15px) rotateY(5deg);
+                border-color: rgba(99, 102, 241, 0.8);
+                box-shadow: 0 25px 60px rgba(99, 102, 241, 0.4),
+                    0 0 40px rgba(34, 211, 238, 0.3),
+                    inset 0 0 30px rgba(99, 102, 241, 0.1);
+                background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(34, 211, 238, 0.1) 100%);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .coordinator-card:active {
+                transform: translateY(-8px);
+                border-color: rgba(99, 102, 241, 0.6);
+                box-shadow: 0 15px 40px rgba(99, 102, 241, 0.3);
+            }
+        }
+
+        .coordinator-icon {
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @media (min-width: 768px) {
+            .coordinator-card:hover .coordinator-icon {
+                border-color: rgba(99, 102, 241, 0.9);
+                box-shadow: 0 0 30px rgba(99, 102, 241, 0.6), inset 0 0 20px rgba(99, 102, 241, 0.2);
+                transform: scale(1.15) rotate(360deg);
+                background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(34, 211, 238, 0.3));
+            }
+        }
+
+        /* Enhanced hex pattern */
+        .hex-pattern {
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(6, 182, 212, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(99, 102, 241, 0.05) 0%, transparent 50%);
+            position: relative;
+        }
+
+        .hex-pattern::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l25.98 15v30L30 60 4.02 45V15z' fill='none' stroke='rgba(6, 182, 212, 0.1)' stroke-width='0.5'/%3E%3C/svg%3E");
+            opacity: 0.3;
+            pointer-events: none;
+            animation: hexRotate 60s linear infinite;
+        }
+
+        @keyframes hexRotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Glow box enhancement */
+        .glow-box {
+            box-shadow: 0 0 30px rgba(6, 182, 212, 0.3), inset 0 0 20px rgba(6, 182, 212, 0.05);
+            border: 2px solid rgba(6, 182, 212, 0.3);
+            background: rgba(15, 23, 42, 0.6);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Logo hex with rotation */
+        .logo-hex {
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.2) 0%, rgba(99, 102, 241, 0.2) 100%);
+            border: 2px solid rgba(6, 182, 212, 0.5);
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.4), inset 0 0 15px rgba(6, 182, 212, 0.1);
+            transition: all 0.5s ease;
+        }
+
+        .logo-hex:hover {
+            transform: rotate(180deg) scale(1.1);
+            box-shadow: 0 0 40px rgba(6, 182, 212, 0.6), inset 0 0 25px rgba(6, 182, 212, 0.2);
+        }
+
+        /* Hero section with animated gradient - FULLY RESPONSIVE */
+        .hero-section {
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(15, 23, 42, 0.9)), url('images/tech.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            min-height: 100dvh;
+            /* Dynamic viewport height for mobile */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), transparent, rgba(34, 211, 238, 0.1));
+            animation: gradientShift 10s ease infinite;
+        }
+
+        @keyframes gradientShift {
+
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: translateX(0);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: translateX(20px);
+            }
+        }
+
+        /* Enhanced countdown - FULLY RESPONSIVE */
+        .countdown-box {
+            background: rgba(15, 23, 42, 0.95);
+            border: 2px solid rgba(99, 102, 241, 0.3);
+            border-radius: 16px;
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.3), 0 10px 40px rgba(0, 0, 0, 0.5);
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media (min-width: 768px) {
+            .countdown-box {
+                border-radius: 20px;
+                box-shadow: 0 0 40px rgba(99, 102, 241, 0.4), 0 10px 50px rgba(0, 0, 0, 0.6);
+            }
+        }
+
+        .countdown-box::before {
+            content: '';
+            position: absolute;
+            inset: -50%;
+            background: linear-gradient(45deg, transparent, rgba(99, 102, 241, 0.1), transparent);
+            animation: countdownShine 3s linear infinite;
+        }
+
+        @keyframes countdownShine {
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
+        }
+
+        .countdown-item {
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        @media (min-width: 768px) {
+            .countdown-item:hover {
+                transform: scale(1.1);
+            }
+        }
+
+        /* Countdown number - PERFECTLY RESPONSIVE */
+        .countdown-number {
+            font-size: 1.75rem;
+            font-weight: bold;
+            color: #6366f1;
+            line-height: 1.2;
+            text-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
+            animation: numberPulse 2s ease-in-out infinite;
+        }
+
+        @media (min-width: 375px) {
+            .countdown-number {
+                font-size: 2rem;
+            }
+        }
+
+        @media (min-width: 480px) {
+            .countdown-number {
+                font-size: 2.25rem;
+            }
+        }
+
+        @media (min-width: 640px) {
+            .countdown-number {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .countdown-number {
+                font-size: 3rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .countdown-number {
+                font-size: 3.5rem;
+            }
+        }
+
+        @keyframes numberPulse {
+
+            0%,
+            100% {
+                text-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+            }
+
+            50% {
+                text-shadow: 0 0 30px rgba(99, 102, 241, 0.8), 0 0 40px rgba(34, 211, 238, 0.4);
+            }
+        }
+
+        .countdown-label {
+            text-transform: uppercase;
+            font-size: 0.65rem;
+            color: #06b6d4;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            margin-top: 0.25rem;
+        }
+
+        @media (min-width: 640px) {
+            .countdown-label {
+                font-size: 0.75rem;
+                letter-spacing: 0.1em;
+                margin-top: 0.5rem;
+            }
+        }
+
+        /* Enhanced vertical navigation - Hidden on mobile/tablet */
+        .vertical-nav {
+            position: fixed;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+            display: none;
+        }
+
+        @media (min-width: 1024px) {
+            .vertical-nav {
+                display: block;
+            }
+        }
+
+        /* Mobile hamburger menu - RESPONSIVE POSITIONING - Fixed to avoid scroll bar overlap */
+        .mobile-menu-btn {
+            position: fixed;
+            top: 60px;
+            right: 16px;
+            z-index: 200;
+            background: rgba(15, 10, 30, 0.95);
+            border: 2px solid rgba(139, 92, 246, 0.4);
+            border-radius: 12px;
+            padding: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+        }
+
+        @media (min-width: 640px) {
+            .mobile-menu-btn {
+                top: 70px;
+                right: 20px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .mobile-menu-btn {
+                display: none;
+            }
+        }
+
+        .mobile-menu-btn:hover {
+            border-color: rgba(139, 92, 246, 0.7);
+            background: rgba(139, 92, 246, 0.3);
+            transform: scale(1.05);
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .hamburger span {
+            width: 22px;
+            height: 2.5px;
+            background: #c084fc;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        /* Mobile menu - FULLY RESPONSIVE */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 280px;
+            max-width: 85vw;
+            height: 100vh;
+            height: 100dvh;
+            background: rgba(15, 10, 30, 0.98);
+            -webkit-backdrop-filter: blur(25px);
+            backdrop-filter: blur(25px);
+            border-left: 2px solid rgba(139, 92, 246, 0.4);
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 150;
+            padding: 80px 20px 25px;
+            overflow-y: auto;
+        }
+
+        @media (min-width: 640px) {
+            .mobile-menu {
+                width: 320px;
+                padding: 90px 25px 25px;
+            }
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        .mobile-nav-item {
+            display: block;
+            padding: 14px 18px;
+            color: #d1d5db;
+            text-decoration: none;
+            border-radius: 10px;
+            margin-bottom: 6px;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+            font-size: 0.95rem;
+        }
+
+        @media (min-width: 640px) {
+            .mobile-nav-item {
+                padding: 15px 20px;
+                margin-bottom: 8px;
+                font-size: 1rem;
+            }
+        }
+
+        .mobile-nav-item:hover {
+            background: rgba(139, 92, 246, 0.2);
+            border-color: rgba(139, 92, 246, 0.4);
+            color: #c084fc;
+            transform: translateX(5px);
+        }
+
+        .mobile-nav-item i {
+            margin-right: 12px;
+            width: 20px;
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 140;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-social {
+            border-top: 1px solid rgba(139, 92, 246, 0.2);
+            margin-top: 20px;
+            padding-top: 20px;
+        }
+
+        .mobile-social-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 18px;
+            color: #d1d5db;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 5px;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        @media (min-width: 640px) {
+            .mobile-social-item {
+                padding: 12px 20px;
+                font-size: 1rem;
+            }
+        }
+
+        .mobile-social-item:hover {
+            background: rgba(139, 92, 246, 0.15);
+            color: #c084fc;
+        }
+
+        .mobile-social-item i {
+            margin-right: 12px;
+            width: 20px;
+        }
+
+        /* Badge styling - ULTRA RESPONSIVE */
+        .hero-badge {
+            position: absolute;
+            top: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+            width: calc(100% - 24px);
+            max-width: 95%;
+            padding: 0 12px;
+        }
+
+        @media (min-width: 375px) {
+            .hero-badge {
+                top: 75px;
+                width: calc(100% - 32px);
+                max-width: 420px;
+                padding: 0 16px;
+            }
+        }
+
+        @media (min-width: 640px) {
+            .hero-badge {
+                top: 80px;
+                max-width: 500px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .hero-badge {
+                top: 90px;
+                max-width: 600px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .hero-badge {
+                top: 100px;
+            }
+        }
+
+        .hero-badge-inner {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.25) 0%, rgba(34, 211, 238, 0.2) 100%);
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+            border: 1.5px solid rgba(139, 92, 246, 0.4);
+            border-radius: 20px;
+            padding: 6px 14px;
+            box-shadow: 0 6px 24px rgba(99, 102, 241, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        @media (min-width: 375px) {
+            .hero-badge-inner {
+                padding: 8px 18px;
+                border-radius: 25px;
+                box-shadow: 0 8px 32px rgba(99, 102, 241, 0.3);
+            }
+        }
+
+        @media (min-width: 640px) {
+            .hero-badge-inner {
+                padding: 10px 24px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .hero-badge-inner {
+                padding: 12px 28px;
+            }
+        }
+
+        .hero-badge-inner:hover {
+            border-color: rgba(139, 92, 246, 0.6);
+            box-shadow: 0 12px 40px rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .hero-badge-text {
+            color: #ffffff;
+            font-size: 9px;
+            font-weight: 700;
+            text-align: center;
+            letter-spacing: 0.3px;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            line-height: 1.3;
+        }
+
+        @media (min-width: 375px) {
+            .hero-badge-text {
+                font-size: 10px;
+                letter-spacing: 0.4px;
+            }
+        }
+
+        @media (min-width: 480px) {
+            .hero-badge-text {
+                font-size: 11px;
+                letter-spacing: 0.5px;
+            }
+        }
+
+        @media (min-width: 640px) {
+            .hero-badge-text {
+                font-size: 13px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .hero-badge-text {
+                font-size: 15px;
+            }
+        }
+
+        /* Hero section responsive improvements */
+        .hero-content {
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 100px;
+            padding-bottom: 20px;
+        }
+
+        @media (min-width: 640px) {
+            .hero-content {
+                padding-top: 120px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .hero-content {
+                padding-top: 60px;
+            }
+        }
+
+        .vertical-nav ul {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            background: rgba(15, 10, 30, 0.7);
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
+            border-radius: 16px;
+            padding: 1rem 0.5rem;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0.5rem 0.6rem;
+            color: white;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .nav-item::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), transparent);
+            border-radius: 10px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .nav-item:hover::before {
+            opacity: 1;
+        }
+
+        .nav-item:hover {
+            background: rgba(139, 92, 246, 0.3);
+            color: #c084fc;
+            transform: translateX(5px) scale(1.05);
+            box-shadow: 0 5px 20px rgba(139, 92, 246, 0.4);
+        }
+
+        .nav-item i {
+            font-size: 1.2rem;
+            margin-bottom: 0.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item:hover i {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .nav-item span {
+            font-size: 0.55rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .nav-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.5), transparent);
+            margin: 0.5rem 0;
+        }
+
+        /* Social items enhancement */
+        .social-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0.5rem 0.6rem;
+            color: white;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .social-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 10px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .social-item:hover {
+            transform: translateX(5px) scale(1.1);
+        }
+
+        .social-item.instagram::after {
+            background: radial-gradient(circle, rgba(225, 48, 108, 0.2), transparent);
+        }
+
+        .social-item.linkedin::after {
+            background: radial-gradient(circle, rgba(0, 119, 181, 0.2), transparent);
+        }
+
+        .social-item.youtube::after {
+            background: radial-gradient(circle, rgba(255, 0, 0, 0.2), transparent);
+        }
+
+        .social-item:hover::after {
+            opacity: 1;
+        }
+
+        .social-item.instagram:hover {
+            color: #e1306c;
+            box-shadow: 0 5px 20px rgba(225, 48, 108, 0.4);
+        }
+
+        .social-item.linkedin:hover {
+            color: #0077b5;
+            box-shadow: 0 5px 20px rgba(0, 119, 181, 0.4);
+        }
+
+        .social-item.youtube:hover {
+            color: #ff0000;
+            box-shadow: 0 5px 20px rgba(255, 0, 0, 0.4);
+        }
+
+        .social-item i {
+            font-size: 1.2rem;
+            margin-bottom: 0.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-item:hover i {
+            transform: scale(1.3) rotate(360deg);
+        }
+
+        .social-item span {
+            font-size: 0.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        /* Dropdown enhancement */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            transform: translateY(-50%) scale(0.95);
+            margin-left: 10px;
+            background: rgba(30, 20, 50, 0.98);
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(139, 92, 246, 0.4);
+            border-radius: 12px;
+            min-width: 180px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 100;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(-50%) scale(1);
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 0.75rem 1.25rem;
+            color: #d1d5db;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .dropdown-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #8b5cf6, #c084fc);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown-item:hover::before {
+            transform: scaleY(1);
+        }
+
+        .dropdown-item:hover {
+            background: rgba(139, 92, 246, 0.25);
+            color: #c084fc;
+            padding-left: 1.5rem;
+        }
+
+        .dropdown-item:first-child {
+            border-radius: 12px 12px 0 0;
+        }
+
+        .dropdown-item:last-child {
+            border-radius: 0 0 12px 12px;
+        }
+
+        /* Button animations */
+        button {
+            position: relative;
+            overflow: hidden;
+        }
+
+        button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+
+        button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        button span,
+        button i {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Icon bounce on hover - disable on mobile */
+        @keyframes iconBounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .card-hover:hover i {
+                animation: iconBounce 0.6s ease infinite;
+            }
+        }
+
+        /* Fade in animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        /* Staggered animation delays */
+        .card-hover:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .card-hover:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .card-hover:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .card-hover:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .card-hover:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .card-hover:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+
+        .card-hover:nth-child(7) {
+            animation-delay: 0.7s;
+        }
+
+        /* Prevent horizontal scroll on small screens */
+        body {
+            overflow-x: hidden;
+        }
+
+        /* Ensure smooth font scaling */
+        html {
+            font-size: 16px;
+        }
+
+        @media (max-width: 374px) {
+            html {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-gray-100">
+
+    <!-- Dynamic Scroll Bar - RESPONSIVE -->
+    <div
+        class="sticky top-0 z-50 bg-gradient-to-r from-slate-800 via-slate-700 to-teal-800 py-2 sm:py-3 overflow-hidden border-b border-teal-500/30">
+        <div class="scrolling-text whitespace-nowrap text-white font-semibold text-sm sm:text-base md:text-lg px-4">
+            <span id="scrolling-message">
+                Registration Dates: February 24th - March 4th | Only <span id="days-left">0</span> Days Left to
+                Register! | Join us for the biggest tech event of the year!
+            </span>
+        </div>
+    </div>
+
+    <!-- Hero Section - PERFECTLY RESPONSIVE -->
+    <section class="hero-section relative">
+        <!-- College Logo - Top Left - ULTRA RESPONSIVE -->
+        <div class="absolute top-3 left-3 sm:top-4 sm:left-4 md:top-6 md:left-6 z-20">
+            <img src="images/college_logo.png" alt="College Logo"
+                class="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain float-animation">
+        </div>
+
+        <!-- Mobile Menu Button - Only visible on mobile/tablet -->
+        <div class="mobile-menu-btn lg:hidden">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay lg:hidden"></div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu lg:hidden">
+            <nav>
+                <a href="index.html" class="mobile-nav-item">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                <a href="civil.html" class="mobile-nav-item">
+                    <i class="fas fa-building"></i>
+                    Civil Engineering
+                </a>
+                <a href="software-events.html" class="mobile-nav-item">
+                    <i class="fas fa-laptop-code"></i>
+                    Software Events
+                </a>
+                <a href="mechanical.html" class="mobile-nav-item">
+                    <i class="fas fa-cog"></i>
+                    Mechanical
+                </a>
+                <a href="mba.html" class="mobile-nav-item">
+                    <i class="fas fa-briefcase"></i>
+                    MBA
+                </a>
+                <a href="ece.html" class="mobile-nav-item">
+                    <i class="fas fa-microchip"></i>
+                    ECE
+                </a>
+                <a href="eee.html" class="mobile-nav-item">
+                    <i class="fas fa-bolt"></i>
+                    EEE
+                </a>
+                <a href="basic-science.html" class="mobile-nav-item">
+                    <i class="fas fa-flask"></i>
+                    Basic Science
+                </a>
+                <a href="gallery.html" class="mobile-nav-item">
+                    <i class="fas fa-images"></i>
+                    Gallery
+                </a>
+                <a href="#coordinators" class="mobile-nav-item">
+                    <i class="fas fa-users"></i>
+                    About Us
+                </a>
+                <a href="sponsors.html" class="mobile-nav-item">
+                    <i class="fas fa-gem"></i>
+                    Sponsors
+                </a>
+
+                <div class="mobile-social">
+                    <h4 class="text-purple-300 font-semibold mb-3 px-5 text-sm">Follow Us</h4>
+                    <a href="https://www.instagram.com/technova_2k26/" target="_blank" rel="noopener" class="mobile-social-item">
+                        <i class="fab fa-instagram"></i>
+                        Instagram
+                    </a>
+                    <a href="https://www.linkedin.com/in/technova2k26" target="_blank" rel="noopener" class="mobile-social-item">
+                        <i class="fab fa-linkedin"></i>
+                        LinkedIn
+                    </a>
+                    <a href="https://youtube.com" target="_blank" rel="noopener" class="mobile-social-item">
+                        <i class="fab fa-youtube"></i>
+                        YouTube
+                    </a>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Badge - ULTRA RESPONSIVE -->
+        <div class="hero-badge">
+            <div class="hero-badge-inner">
+                <div class="hero-badge-text">
+                    A NATIONAL LEVEL TECHNICAL SYMPOSIUM FOR WOMEN
+                </div>
+            </div>
+        </div>
+
+        <!-- Vertical Navigation Bar - Desktop only -->
+        <nav class="vertical-nav">
+            <ul>
+                <li>
+                    <a href="index.html" class="nav-item">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-th-large"></i>
+                        <span>Events</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="civil.html" class="dropdown-item">Civil Engineering</a>
+                        <a href="software-events.html" class="dropdown-item">Software Events</a>
+                        <a href="mechanical.html" class="dropdown-item">Mechanical</a>
+                        <a href="mba.html" class="dropdown-item">MBA</a>
+                        <a href="ece.html" class="dropdown-item">ECE</a>
+                        <a href="eee.html" class="dropdown-item">EEE</a>
+                        <a href="basic-science.html" class="dropdown-item">Basic Science</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="gallery.html" class="nav-item">
+                        <i class="fas fa-images"></i>
+                        <span>Gallery</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#coordinators" class="nav-item">
+                        <i class="fas fa-users"></i>
+                        <span>About Us</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="sponsors.html" class="nav-item">
+                        <i class="fas fa-gem"></i>
+                        <span>Sponsors</span>
+                    </a>
+                </li>
+                <!-- Divider -->
+                <li class="nav-divider"></li>
+                <!-- Social Media Links -->
+                <li>
+                    <a href="https://www.instagram.com/technova_2k26/" target="_blank" rel="noopener"
+                        class="social-item instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span>Insta</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/technova2k26" target="_blank" rel="noopener"
+                        class="social-item linkedin">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/@VishnuSociety" target="_blank" rel="noopener" class="social-item youtube">
+                        <i class="fab fa-youtube"></i>
+                        <span>YouTube</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Hero Content - PERFECTLY RESPONSIVE -->
+        <div class="container mx-auto px-4 py-2 text-center relative z-10 hero-content">
+            <div class="w-full max-w-5xl mx-auto">
+                <!-- TechNova Logo - ULTRA RESPONSIVE - OPTIMIZED DESKTOP SIZE v2.0 -->
+                <!-- TechNova Logo - Reduced Gap -->
+                <div class="mb-0 sm:-mb-2 md:-mb-6 lg:-mb-16 xl:-mb-20 mt-0 fade-in-up">
+                    <img src="images/technova.png" alt="TechNova Logo" class="w-64 h-32 
+       xs:w-72 xs:h-36 
+       sm:w-64 sm:h-32 
+       md:w-80 md:h-40 
+       lg:w-[420px] lg:h-[420px] 
+       xl:w-[460px] xl:h-[460px] 
+       mx-auto object-contain float-animation"
+>
+                </div>
+
+
+                <!-- Year Only - RESPONSIVE -->
+                <h2 class="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-3 md:mb-4 tracking-tight shimmer-text fade-in-up"
+                    style="animation-delay: 0.2s;">
+                    2026
+                </h2>
+
+                <!-- Event Details - ULTRA RESPONSIVE -->
+                <div class="mb-4 sm:mb-6 fade-in-up px-2" style="animation-delay: 0.3s;">
+                    <h3
+                        class="text-base xs:text-lg sm:text-xl md:text-2xl font-semibold text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text mb-2 sm:mb-3">
+                        March 6 – March 8
+                    </h3>
+                    <div
+                        class="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-2 sm:gap-3 text-pink-400 mb-2">
+                        <div class="flex items-center justify-center gap-2">
+                            <!-- <i class="fas fa-music text-xs sm:text-sm"></i> -->
+                            <span class="text-xs sm:text-sm md:text-base font-semibold">Culturals & Flashmob Special
+                                Event</span>
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-2 sm:gap-3 text-yellow-400">
+                        <div class="flex items-center justify-center gap-2">
+                            <!-- <i class="fas fa-trophy text-xs sm:text-sm"></i> -->
+                            <span class="text-xs sm:text-sm md:text-base font-semibold">Exciting Cash Prizes & Food
+                                Carnival</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Buttons - ULTRA RESPONSIVE - SMALLER ON MOBILE -->
+                <div class="flex flex-col sm:flex-row 
+                            gap-3 sm:gap-6 lg:gap-10 
+                            items-center justify-center 
+                            fade-in-up mt-4 sm:mt-6 px-4" style="animation-delay: 0.6s;">
+                
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfvQDWm7I9s22yM-b8RbeVFkp5izUNS8sqL8bHeCu68ub88lA/viewform" 
+                       target="_blank"
+                       class="w-4/5 sm:w-auto
+                               bg-gradient-to-r from-indigo-600 to-purple-600 
+                               hover:from-indigo-700 hover:to-purple-700 
+                               text-white font-semibold 
+                               py-2 sm:py-3 
+                               px-4 sm:px-8 
+                               rounded-full 
+                               transition-all transform hover:scale-105 
+                               shadow-lg hover:shadow-2xl hover:shadow-indigo-500/50 
+                               text-xs sm:text-base
+                               inline-flex items-center justify-center">
+                        <i class="fas fa-user-plus mr-1 sm:mr-2"></i>
+                        <span>Register Now</span>
+                    </a>
+                
+                    <a href="https://www.youtube.com/@VishnuSociety" 
+                       target="_blank"
+                       class="w-4/5 sm:w-auto
+                               bg-white/20 backdrop-blur-sm hover:bg-white/30 
+                               text-white font-semibold 
+                               py-2 sm:py-3 
+                               px-4 sm:px-8 
+                               rounded-full 
+                               transition-all 
+                               border border-white/30 
+                               flex items-center justify-center gap-1 sm:gap-2 
+                               hover:shadow-2xl hover:shadow-white/20 
+                               text-xs sm:text-base">
+                        <i class="fas fa-play-circle"></i>
+                        <span>Watch Trailer</span>
+                    </a>
+                
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Section - PERFECTLY RESPONSIVE -->
+    <section class="bg-slate-950 py-6 sm:py-8 md:py-12 lg:py-16">
+        <div class="container mx-auto px-3 sm:px-4">
+            <div class="countdown-box max-w-5xl mx-auto p-4 sm:p-6 md:p-8 lg:p-12">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 md:gap-8">
+                    <!-- Left Text - RESPONSIVE -->
+                    <div class="text-center md:text-left flex-1 w-full md:w-auto">
+                        <h2
+                            class="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2 shimmer-text">
+                            Countdown to Chaos
+                        </h2>
+                        <p class="text-gray-300 text-xs sm:text-sm md:text-base">
+                            Can't miss the opening ceremony!
+                        </p>
+                    </div>
+
+                    <!-- Countdown Numbers - PERFECT RESPONSIVE GRID -->
+                    <div
+                        class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8 w-full md:w-auto md:max-w-none">
+                        <div class="countdown-item px-2 sm:px-0">
+                            <div class="countdown-number" id="countdown-days">37</div>
+                            <div class="countdown-label">Days</div>
+                        </div>
+                        <div class="countdown-item px-2 sm:px-0">
+                            <div class="countdown-number" id="countdown-hours">00</div>
+                            <div class="countdown-label">Hours</div>
+                        </div>
+                        <div class="countdown-item px-2 sm:px-0">
+                            <div class="countdown-number" id="countdown-minutes">00</div>
+                            <div class="countdown-label">Minutes</div>
+                        </div>
+                        <div class="countdown-item px-2 sm:px-0">
+                            <div class="countdown-number" id="countdown-seconds">00</div>
+                            <div class="countdown-label">Seconds</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Department Grid - PERFECTLY RESPONSIVE -->
+    <section class="container mx-auto px-3 sm:px-4 py-8 sm:py-12 md:py-16">
+        <h2 class="text-2xl xs:text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12 shimmer-text px-4">
+            Explore Our Departments
+        </h2>
+
+        <div class="flex flex-col gap-3 sm:gap-4 max-w-4xl mx-auto">
+            <!-- Civil Engineering -->
+            <a href="civil.html"
+                class="card-hover fade-in-up relative bg-gradient-to-r from-orange-900/40 to-slate-900 rounded-xl px-4 sm:px-6 py-3 sm:py-4 border border-orange-500/30 overflow-hidden backdrop-blur-sm cursor-pointer group flex items-center">
+                <div class="glow-effect absolute top-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full blur-3xl"></div>
+                <div
+                    class="w-10 h-10 sm:w-12 sm:h-12 bg-orange-500/20 rounded-xl flex items-center justify-center border border-orange-500/50 flex-shrink-0 transition-all duration-300 group-hover:bg-orange-500/30 group-hover:border-orange-400">
+                    <i
+                        class="fas fa-building text-lg sm:text-xl text-orange-400 transition-all duration-300 group-hover:text-orange-300"></i>
+                </div>
+                <div class="ml-3 sm:ml-5 flex-grow min-w-0">
+                    <h3
+                        class="text-base sm:text-lg md:text-xl font-bold text-white transition-all duration-300 group-hover:text-orange-300 truncate">
+                        Civil Engineering</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm">5 Technical Events</p>
+                </div>
+                <div
+                    class="flex items-center text-orange-400 group-hover:text-orange-300 transition-colors flex-shrink-0 ml-2">
+                    <span class="font-semibold hidden sm:inline text-sm md:text-base">Explore Events</span>
+                    <i
+                        class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform text-sm sm:text-base"></i>
+                </div>
+            </a>
+
+            <!-- Software Events (CSE, IT, AI Combined) -->
+            <a href="software-events.html"
+                class="card-hover fade-in-up relative bg-gradient-to-r from-purple-900/40 to-slate-900 rounded-xl px-4 sm:px-6 py-3 sm:py-4 border border-purple-500/30 overflow-hidden backdrop-blur-sm cursor-pointer group flex items-center">
+                <div class="glow-effect absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full blur-3xl"></div>
+                <div
+                    class="w-10 h-10 sm:w-12 sm:h-12 bg-purple-500/20 rounded-xl flex items-center justify-center border border-purple-500/50 flex-shrink-0 transition-all duration-300 group-hover:bg-purple-500/30 group-hover:border-purple-400">
+                    <i
+                        class="fas fa-laptop-code text-lg sm:text-xl text-purple-400 transition-all duration-300 group-hover:text-purple-300"></i>
+                </div>
+                <div class="ml-3 sm:ml-5 flex-grow min-w-0">
+                    <h3
+                        class="text-base sm:text-lg md:text-xl font-bold text-white transition-all duration-300 group-hover:text-purple-300 truncate">
+                        Software Events</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm">CSE · IT · AI</p>
+                </div>
+                <div
+                    class="flex items-center text-purple-400 group-hover:text-purple-300 transition-colors flex-shrink-0 ml-2">
+                    <span class="font-semibold hidden sm:inline text-sm md:text-base">Explore Events</span>
+                    <i
+                        class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform text-sm sm:text-base"></i>
+                </div>
+            </a>
+
+            <!-- Mechanical Engineering -->
+            <a href="mechanical.html"
+                class="card-hover fade-in-up relative bg-gradient-to-r from-gray-800/40 to-slate-900 rounded-xl px-4 sm:px-6 py-3 sm:py-4 border border-gray-500/30 overflow-hidden backdrop-blur-sm cursor-pointer group flex items-center">
+                <div class="glow-effect absolute top-0 right-0 w-32 h-32 bg-gray-500/10 rounded-full blur-3xl"></div>
+                <div
+                    class="w-10 h-10 sm:w-12 sm:h-12 bg-gray-500/20 rounded-xl flex items-center justify-center border border-gray-500/50 flex-shrink-0 transition-all duration-300 group-hover:bg-gray-500/30 group-hover:border-gray-400">
+                    <i
+                        class="fas fa-cog text-lg sm:text-xl text-gray-400 transition-all duration-300 group-hover:text-gray-300"></i>
+                </div>
+                <div class="ml-3 sm:ml-5 flex-grow min-w-0">
+                    <h3
+                        class="text-base sm:text-lg md:text-xl font-bold text-white transition-all duration-300 group-hover:text-gray-300 truncate">
+                        Mechanical Engineering</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm">4 Technical Events</p>
+                </div>
+                <div
+                    class="flex items-center text-gray-400 group-hover:text-gray-300 transition-colors flex-shrink-0 ml-2">
+                    <span class="font-semibold hidden sm:inline text-sm md:text-base">Explore Events</span>
+                    <i
+                        class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform text-sm sm:text-base"></i>
+                </div>
+            </a>
+
+            <!-- MBA -->
+            <a href="mba.html"
+                class="card-hover fade-in-up relative bg-gradient-to-r from-blue-950/40 to-slate-900 rounded-xl px-4 sm:px-6 py-3 sm:py-4 border border-blue-600/30 overflow-hidden backdrop-blur-sm cursor-pointer group flex items-center">
+                <div class="glow-effect absolute top-0 right-0 w-32 h-32 bg-blue-600/10 rounded-full blur-3xl"></div>
+                <div
+                    class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600/20 rounded-xl flex items-center justify-center border border-blue-600/50 flex-shrink-0 transition-all duration-300 group-hover:bg-blue-600/30 group-hover:border-blue-500">
+                    <i
+                        class="fas fa-briefcase text-lg sm:text-xl text-blue-400 transition-all duration-300 group-hover:text-blue-300"></i>
+                </div>
+                <div class="ml-3 sm:ml-5 flex-grow min-w-0">
+                    <h3
+                        class="text-base sm:text-lg md:text-xl font-bold text-white transition-all duration-300 group-hover:text-blue-300 truncate">
+                        MBA</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm">4 Technical Events</p>
+                </div>
+                <div
+                    class="flex items-center text-blue-400 group-hover:text-blue-300 transition-colors flex-shrink-0 ml-2">
+                    <span class="font-semibold hidden sm:inline text-sm md:text-base">Explore Events</span>
+                    <i
+                        class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform text-sm sm:text-base"></i>
+                </div>
+            </a>
+
+            <!-- Electronics & Communication -->
+            <a href="ece.html"
+                class="card-hover fade-in-up relative bg-gradient-to-r from-blue-900/40 to-slate-900 rounded-xl px-4 sm:px-6 py-3 sm:py-4 border border-blue-500/30 overflow-hidden backdrop-blur-sm cursor-pointer group flex items-center">
+                <div class="glow-effect absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl"></div>
+                <div
+                    class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-500/20 rounded-xl flex items-center justify-center border border-blue-500/50 flex-shrink-0 transition-all duration-300 group-hover:bg-blue-500/30 group-hover:border-blue-400">
+                    <i
+                        class="fas fa-microchip text-lg sm:text-xl text-blue-400 transition-all duration-300 group-hover:text-blue-300"></i>
+                </div>
+                <div class="ml-3 sm:ml-5 flex-grow min-w-0">
+                    <h3
+                        class="text-base sm:text-lg md:text-xl font-bold text-white transition-all duration-300 group-hover:text-blue-300 truncate">
+                        ECE</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm">5 Technical Events</p>
+                </div>
+                <div
+                    class="flex items-center text-blue-400 group-hover:text-blue-300 transition-colors flex-shrink-0 ml-2">
+                    <span class="font-semibold hidden sm:inline text-sm md:text-base">Explore Events</span>
+                    <i
+                        class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform text-sm sm:text-base"></i>
+                </div>
+            </a>
+
+            <!-- EEE Department -->
+            <a href="eee.html"
+                class="card-hover fade-in-up relative bg-gradient-to-r from-indigo-900/40 to-slate-900 rounded-xl px-4 sm:px-6 py-3 sm:py-4 border border-indigo-500/30 overflow-hidden backdrop-blur-sm cursor-pointer group flex items-center">
+                <div class="glow-effect absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-3xl"></div>
+                <div
+                    class="w-10 h-10 sm:w-12 sm:h-12 bg-indigo-500/20 rounded-xl flex items-center justify-center border border-indigo-500/50 flex-shrink-0 transition-all duration-300 group-hover:bg-indigo-500/30 group-hover:border-indigo-400">
+                    <i
+                        class="fas fa-bolt text-lg sm:text-xl text-indigo-400 transition-all duration-300 group-hover:text-indigo-300"></i>
+                </div>
+                <div class="ml-3 sm:ml-5 flex-grow min-w-0">
+                    <h3
+                        class="text-base sm:text-lg md:text-xl font-bold text-white transition-all duration-300 group-hover:text-indigo-300 truncate">
+                        EEE</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm">5 Technical Events</p>
+                </div>
+                <div
+                    class="flex items-center text-indigo-400 group-hover:text-indigo-300 transition-colors flex-shrink-0 ml-2">
+                    <span class="font-semibold hidden sm:inline text-sm md:text-base">Explore Events</span>
+                    <i
+                        class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform text-sm sm:text-base"></i>
+                </div>
+            </a>
+
+            <!-- Basic Science -->
+            <a href="basic-science.html"
+                class="card-hover fade-in-up relative bg-gradient-to-r from-green-900/40 to-slate-900 rounded-xl px-4 sm:px-6 py-3 sm:py-4 border border-green-500/30 overflow-hidden backdrop-blur-sm cursor-pointer group flex items-center">
+                <div class="glow-effect absolute top-0 right-0 w-32 h-32 bg-green-500/10 rounded-full blur-3xl"></div>
+                <div
+                    class="w-10 h-10 sm:w-12 sm:h-12 bg-green-500/20 rounded-xl flex items-center justify-center border border-green-500/50 flex-shrink-0 transition-all duration-300 group-hover:bg-green-500/30 group-hover:border-green-400">
+                    <i
+                        class="fas fa-flask text-lg sm:text-xl text-green-400 transition-all duration-300 group-hover:text-green-300"></i>
+                </div>
+                <div class="ml-3 sm:ml-5 flex-grow min-w-0">
+                    <h3
+                        class="text-base sm:text-lg md:text-xl font-bold text-white transition-all duration-300 group-hover:text-green-300 truncate">
+                        Basic Science</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm">5 Technical Events</p>
+                </div>
+                <div
+                    class="flex items-center text-green-400 group-hover:text-green-300 transition-colors flex-shrink-0 ml-2">
+                    <span class="font-semibold hidden sm:inline text-sm md:text-base">Explore Events</span>
+                    <i
+                        class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform text-sm sm:text-base"></i>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Us Section - PERFECTLY RESPONSIVE -->
+    <section class="container mx-auto px-3 sm:px-4 py-8 sm:py-12 md:py-16 bg-slate-950">
+        <!-- Title -->
+        <div id="coordinators" class="text-center mb-6 sm:mb-8 scroll-mt-20">
+            <h2 class="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold mb-2 sm:mb-3 px-4">
+                <span class="text-white">Main Event </span>
+                <span class="shimmer-text">Coordinators</span>
+            </h2>
+            <p class="text-gray-400 text-sm sm:text-base md:text-lg px-4">Have questions? Our team is here to help you
+                with registrations and event details</p>
+        </div>
+
+        <!-- Coordinators Grid - PERFECTLY RESPONSIVE -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-7xl mx-auto mb-8 sm:mb-12">
+            <!-- Coordinator 1 -->
+            <div
+                class="coordinator-card fade-in-up bg-slate-900/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-slate-800">
+                <div class="flex flex-col items-center text-center">
+                    <div
+                        class="coordinator-icon w-16 h-16 sm:w-20 sm:h-20 bg-slate-800 rounded-full flex items-center justify-center mb-3 sm:mb-4 border-2 border-slate-700">
+                        <i class="fas fa-user text-2xl sm:text-3xl text-gray-400"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-white mb-1">Dr. K. Padma Vasavi</h3>
+                    <p class="text-cyan-400 text-xs sm:text-sm mb-3 sm:mb-4">Convenor, Professor & HOD-ECE</p>
+                    <div class="space-y-2 w-full">
+                        <div
+                            class="flex items-center justify-center gap-2 text-gray-400 transition-all hover:text-cyan-400">
+                            <i class="fas fa-phone text-xs sm:text-sm"></i>
+                            <span class="text-xs sm:text-sm">+91 9441414651</span>
+                        </div>
+                        <div
+                            class="flex items-center justify-center gap-2 text-gray-400 transition-all hover:text-cyan-400">
+                            <i class="fas fa-envelope text-xs sm:text-sm"></i>
+                            <span class="text-xs sm:text-sm">convenor</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coordinator 2 -->
+            <div class="coordinator-card fade-in-up bg-slate-900/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-slate-800"
+                style="animation-delay: 0.1s;">
+                <div class="flex flex-col items-center text-center">
+                    <div
+                        class="coordinator-icon w-16 h-16 sm:w-20 sm:h-20 bg-slate-800 rounded-full flex items-center justify-center mb-3 sm:mb-4 border-2 border-slate-700">
+                        <i class="fas fa-user text-2xl sm:text-3xl text-gray-400"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-white mb-1">Dr. S. Hanumantha Rao</h3>
+                    <p class="text-cyan-400 text-xs sm:text-sm mb-3 sm:mb-4">Co-Convenor, Professor, ECE</p>
+                    <div class="space-y-2 w-full">
+                        <div
+                            class="flex items-center justify-center gap-2 text-gray-400 transition-all hover:text-cyan-400">
+                            <i class="fas fa-phone text-xs sm:text-sm"></i>
+                            <span class="text-xs sm:text-sm">+91 9849782622</span>
+                        </div>
+                        <div
+                            class="flex items-center justify-center gap-2 text-gray-400 transition-all hover:text-cyan-400">
+                            <i class="fas fa-envelope text-xs sm:text-sm"></i>
+                            <span class="text-xs sm:text-sm">co-convenor</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coordinator 3 -->
+            <div class="coordinator-card fade-in-up bg-slate-900/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-slate-800"
+                style="animation-delay: 0.2s;">
+                <div class="flex flex-col items-center text-center">
+                    <div
+                        class="coordinator-icon w-16 h-16 sm:w-20 sm:h-20 bg-slate-800 rounded-full flex items-center justify-center mb-3 sm:mb-4 border-2 border-slate-700">
+                        <i class="fas fa-user text-2xl sm:text-3xl text-gray-400"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-white mb-1">Ms. Y. V. S. Sindhu</h3>
+                    <p class="text-cyan-400 text-xs sm:text-sm mb-3 sm:mb-4">Student Coordinator, III ECE, SVECW</p>
+                    <div class="space-y-2 w-full">
+                        <div
+                            class="flex items-center justify-center gap-2 text-gray-400 transition-all hover:text-cyan-400">
+                            <i class="fas fa-phone text-xs sm:text-sm"></i>
+                            <span class="text-xs sm:text-sm">+91 8247503445</span>
+                        </div>
+                        <div
+                            class="flex items-center justify-center gap-2 text-gray-400 transition-all hover:text-cyan-400">
+                            <i class="fas fa-envelope text-xs sm:text-sm"></i>
+                            <span class="text-xs sm:text-sm">studentcoord1</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coordinator 4 -->
+            <div class="coordinator-card fade-in-up bg-slate-900/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-slate-800"
+                style="animation-delay: 0.3s;">
+                <div class="flex flex-col items-center text-center">
+                    <div
+                        class="coordinator-icon w-16 h-16 sm:w-20 sm:h-20 bg-slate-800 rounded-full flex items-center justify-center mb-3 sm:mb-4 border-2 border-slate-700">
+                        <i class="fas fa-user text-2xl sm:text-3xl text-gray-400"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-white mb-1">Ms. G. Radhika Reddy</h3>
+                    <p class="text-cyan-400 text-xs sm:text-sm mb-3 sm:mb-4">Student Coordinator, III ECE, SVECW</p>
+                    <div class="space-y-2 w-full">
+                        <div
+                            class="flex items-center justify-center gap-2 text-gray-400 transition-all hover:text-cyan-400">
+                            <i class="fas fa-phone text-xs sm:text-sm"></i>
+                            <span class="text-xs sm:text-sm">+91 6304445743</span>
+                        </div>
+                        <div
+                            class="flex items-center justify-center gap-2 text-gray-400 transition-all hover:text-cyan-400">
+                            <i class="fas fa-envelope text-xs sm:text-sm"></i>
+                            <span class="text-xs sm:text-sm">studentcoord2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Location - RESPONSIVE -->
+        <div class="text-center px-4">
+            <div
+                class="flex flex-col sm:flex-row items-center justify-center gap-2 text-gray-400 transition-all hover:text-indigo-400">
+                <i class="fas fa-map-marker-alt text-indigo-400 flex-shrink-0"></i>
+                <span class="text-xs sm:text-sm md:text-base text-center sm:text-left">Shri Vishnu Engineering College
+                    for Women, Bhimavaram, Andhra Pradesh, 532204</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer - RESPONSIVE -->
+    <footer class="bg-slate-900 border-t border-indigo-500 py-6 sm:py-8 mt-8 sm:mt-12 md:mt-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <p class="text-gray-400 text-sm sm:text-base">© 2026 TechNova. All Rights Reserved.</p>
+                <p class="text-gray-500 text-xs sm:text-sm mt-1">Organized by SVECW</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Countdown Script -->
+    <script>
+        // Calculate days left until March 4, 2026
+        function updateCountdown() {
+            const registrationEnd = new Date('2026-03-04T23:59:59');
+            const now = new Date();
+            const timeDiff = registrationEnd - now;
+
+            const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+            const daysElement = document.getElementById('days-left');
+            const countdownDays = document.getElementById('countdown-days');
+            const countdownHours = document.getElementById('countdown-hours');
+            const countdownMinutes = document.getElementById('countdown-minutes');
+            const countdownSeconds = document.getElementById('countdown-seconds');
+
+            if (days > 0) {
+                if (daysElement) daysElement.textContent = days;
+                if (countdownDays) countdownDays.textContent = String(days).padStart(2, '0');
+                if (countdownHours) countdownHours.textContent = String(hours).padStart(2, '0');
+                if (countdownMinutes) countdownMinutes.textContent = String(minutes).padStart(2, '0');
+                if (countdownSeconds) countdownSeconds.textContent = String(seconds).padStart(2, '0');
+            } else {
+                if (daysElement) daysElement.textContent = '0';
+                if (countdownDays) countdownDays.textContent = '00';
+                if (countdownHours) countdownHours.textContent = '00';
+                if (countdownMinutes) countdownMinutes.textContent = '00';
+                if (countdownSeconds) countdownSeconds.textContent = '00';
+                document.getElementById('scrolling-message').innerHTML =
+                    '🎓 Registration Closed | 🚀 Thank you for your participation!';
+            }
+        }
+
+        // Update countdown on page load
+        updateCountdown();
+
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+
+        // Mobile menu functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+        const hamburger = document.querySelector('.hamburger');
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('active');
+            mobileMenuOverlay.classList.toggle('active');
+            hamburger.classList.toggle('active');
+
+            // Prevent body scroll when menu is open
+            if (mobileMenu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        }
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        }
+
+        if (mobileMenuOverlay) {
+            mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
+        }
+
+        // Close mobile menu when clicking on a nav link
+        const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+        mobileNavItems.forEach(item => {
+            item.addEventListener('click', () => {
+                if (mobileMenu.classList.contains('active')) {
+                    toggleMobileMenu();
+                }
+            });
+        });
+
+        // Close mobile menu when window is resized to desktop
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                if (window.innerWidth >= 1024 && mobileMenu.classList.contains('active')) {
+                    toggleMobileMenu();
+                }
+            }, 250);
+        });
+    </script>
+</body>
+
+</html>

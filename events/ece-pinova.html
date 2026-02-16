@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PiNOVA - TechNova 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html { scroll-behavior: smooth; }
+        .shimmer-text { 
+            background: linear-gradient(90deg, #3b82f6, #60a5fa, #3b82f6); 
+            background-size: 200% auto; 
+            -webkit-background-clip: text; 
+            background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            animation: shimmer 3s linear infinite; 
+        }
+        @keyframes shimmer { 
+            0% { background-position: -200% center; } 
+            100% { background-position: 200% center; } 
+        }
+        .back-button { transition: all 0.3s ease; }
+        .back-button:hover { transform: translateX(-5px); }
+    </style>
+</head>
+<body class="bg-slate-950 text-gray-100">
+
+    <!-- Navigation -->
+    <nav class="bg-slate-900 border-b border-blue-500 py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <a href="../ece.html" class="back-button inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition text-lg font-semibold">
+                <i class="fas fa-arrow-left"></i>
+                Back to ECE
+            </a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="container mx-auto px-4 py-12">
+        <div class="text-center">
+            <h1 class="text-4xl md:text-5xl font-bold shimmer-text mb-4">PiNOVA: Where Tech Takes Shape Workshop</h1>
+            <div class="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <div class="inline-flex items-center gap-4 bg-slate-800 rounded-lg px-6 py-3">
+                    <span class="font-semibold">Team Size: 1</span>
+                </div>
+                <div class="inline-flex items-center gap-4 bg-slate-800 rounded-lg px-6 py-3 border-2 border-blue-500">
+                    <div class="text-center">
+                        <div class="font-semibold text-blue-300">Workshop Fee</div>
+                        <div class="text-sm text-gray-300">
+                            <span class="text-green-400 font-semibold">₹100</span> (IEEE Members) | 
+                            <span class="text-yellow-400 font-semibold">₹200</span> (Non-IEEE)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Event Description -->
+    <section class="container mx-auto px-4 py-12">
+        <div class="max-w-5xl mx-auto">
+            <div class="bg-slate-900 rounded-xl p-8 border-2 border-blue-500 mb-8">
+                <h2 class="text-3xl font-bold text-blue-400 mb-6">Event Description</h2>
+                <div class="text-gray-300 leading-relaxed space-y-3">
+                    <p>
+                        The workshop is designed to introduce students to practical AI applications in Signal Processing and Edge Computing.
+                    </p>
+                    <p>
+                        Participants gain hands-on exposure to building real-world AI-based signal processing solutions.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Rules -->
+            <div class="bg-slate-900 rounded-xl p-8 border-2 border-blue-500">
+                <h2 class="text-3xl font-bold text-blue-400 mb-6">Workshop Details</h2>
+                <div class="text-gray-300 leading-relaxed space-y-6">
+                    <div>
+                        <h3 class="text-xl font-semibold text-blue-300 mb-3">First half of the workshop:</h3>
+                        <ul class="space-y-2 ml-6 list-disc">
+                            <li>Designing and training AI models for signal processing tasks</li>
+                            <li>Data preparation and preprocessing</li>
+                            <li>Feature extraction techniques</li>
+                            <li>AI model development and validation</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-blue-300 mb-3">Second half of the workshop:</h3>
+                        <ul class="space-y-2 ml-6 list-disc">
+                            <li>Deployment of trained AI models on Raspberry Pi</li>
+                            <li>Real-time edge inference</li>
+                            <li>Demonstration of complete AI-to-hardware workflows</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="container mx-auto px-4 py-16">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-blue-400 mb-6">Event Coordinators</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-slate-900 rounded-xl p-6 border-2 border-blue-500">
+                    <h3 class="text-xl font-bold text-blue-400 mb-4">Faculty Coordinator</h3>
+                    <p class="text-lg font-semibold text-gray-200">Dr. R. Sahoo</p>
+                    <p class="text-gray-400">📞 +91 83318 56756</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl p-6 border-2 border-blue-600">
+                    <h3 class="text-xl font-bold text-blue-500 mb-4">Student Coordinator</h3>
+                    <p class="text-lg font-semibold text-gray-200">T. Neelima</p>
+                    <p class="text-gray-400">📞 +91 80748 13123</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-blue-500 py-8 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400">© 2026 TechNova. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuildX Hardware Expo - TechNova 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html { scroll-behavior: smooth; }
+        .shimmer-text { 
+            background: linear-gradient(90deg, #3b82f6, #60a5fa, #3b82f6); 
+            background-size: 200% auto; 
+            -webkit-background-clip: text; 
+            background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            animation: shimmer 3s linear infinite; 
+        }
+        @keyframes shimmer { 
+            0% { background-position: -200% center; } 
+            100% { background-position: 200% center; } 
+        }
+        .back-button { transition: all 0.3s ease; }
+        .back-button:hover { transform: translateX(-5px); }
+    </style>
+</head>
+<body class="bg-slate-950 text-gray-100">
+
+    <!-- Navigation -->
+    <nav class="bg-slate-900 border-b border-blue-500 py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <a href="../ece.html" class="back-button inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition text-lg font-semibold">
+                <i class="fas fa-arrow-left"></i>
+                Back to ECE
+            </a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="container mx-auto px-4 py-12">
+        <div class="text-center">
+            <h1 class="text-4xl md:text-5xl font-bold shimmer-text mb-4">PROJECT EXPO: BuildX Hardware Expo</h1>
+            <div class="mt-6 inline-flex items-center gap-4 bg-slate-800 rounded-lg px-6 py-3">
+                <span class="font-semibold">Team Size: 4</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Event Description -->
+    <section class="container mx-auto px-4 py-12">
+        <div class="max-w-5xl mx-auto">
+            <div class="bg-slate-900 rounded-xl p-8 border-2 border-blue-500 mb-8">
+                <h2 class="text-3xl font-bold text-blue-400 mb-6">Event Description</h2>
+                <div class="text-gray-300 leading-relaxed space-y-3">
+                    <p>
+                        The ECE Project Expo is a technical showcase highlighting innovative projects developed by Electronics and Communication Engineering (ECE) students.
+                    </p>
+                    <p>
+                        The expo focuses on practical solutions to real-world engineering challenges.
+                    </p>
+                    <p>
+                        It provides a platform for students to demonstrate expertise in:
+                    </p>
+                    <ul class="ml-6 list-disc space-y-1">
+                        <li>Electronics & Communication systems</li>
+                        <li>Signal processing</li>
+                        <li>Embedded systems</li>
+                        <li>VLSI design</li>
+                        <li>RF and microwave engineering</li>
+                        <li>Internet of Things (IoT)</li>
+                        <li>Emerging technologies</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Rules -->
+            <div class="bg-slate-900 rounded-xl p-8 border-2 border-blue-500">
+                <h2 class="text-3xl font-bold text-blue-400 mb-6">Rules</h2>
+                <div class="text-gray-300 leading-relaxed space-y-4">
+                    <div>
+                        <h3 class="text-xl font-semibold text-blue-300 mb-2">Registration and Eligibility</h3>
+                        <ul class="ml-6 list-disc space-y-2">
+                            <li>All teams must complete registration before the specified deadline.</li>
+                            <li>Registration may include submission of a project abstract, synopsis, or proposal via email.</li>
+                            <li>Participants must be bonafide undergraduate students and carry valid college ID cards</li>
+                            <li>Each participant is permitted to present only one project.</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold text-blue-300 mb-2">Project and Model Requirements</h3>
+                        <ul class="ml-6 list-disc space-y-2">
+                            <li>Preference will be given to working models or functional prototypes</li>
+                            <li>Projects must be original; plagiarism in any form will result in disqualification.</li>
+                            <li>Projects should highlight social, industrial, or practical relevance</li>
+                            <li>Hardware projects must be supported with a presentation (PPT or equivalent)</li>
+                            <li>Software projects must be demonstrated using the team's own system/laptop</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold text-blue-300 mb-2">Presentation and Evaluation Rules</h3>
+                        <ul class="ml-6 list-disc space-y-2">
+                            <li>Each team will be given 10–15 minutes for project demonstration and interaction with judges.</li>
+                            <li>Participants must report to the venue 30–60 minutes prior to the event start time.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="container mx-auto px-4 py-16">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-blue-400 mb-6">Event Coordinators</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-slate-900 rounded-xl p-6 border-2 border-blue-500">
+                    <h3 class="text-xl font-bold text-blue-400 mb-4">Faculty Coordinator</h3>
+                    <p class="text-lg font-semibold text-gray-200">Dr. R. Sahoo</p>
+                    <p class="text-gray-400">📞 +91 83318 56756</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl p-6 border-2 border-blue-600">
+                    <h3 class="text-xl font-bold text-blue-500 mb-4">Student Coordinator</h3>
+                    <p class="text-lg font-semibold text-gray-200">T. Neelima</p>
+                    <p class="text-gray-400">📞 +91 80748 13123</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-blue-500 py-8 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400">© 2026 TechNova. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
